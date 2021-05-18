@@ -5,9 +5,12 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int SIZE = 10;
+		int ROW = 5;
+		int COL = 5;
 		int[] myInts = { 1,2,3,4,5,6,7,8,9,10 };
 		int[] myInts2 = new int[SIZE];
 		int[] myInt3 = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+		String[][] twoDimArr = new String[ROW][COL];
 		String[] myStrings = {"one","two","three","four","five","six","seven","eight","nine","ten"};
 		
 		//Create an array that will hold 10 integer values, populate the array with values, then call and output each element.
@@ -55,6 +58,25 @@ public class Main {
 				System.out.println(", New Value: " + i);
 			}
 		}
+		//Create a method that produces a 5 x 5 grid by printing out grid spaces of the following symbol combination: [-]
+		//Try to add an x in the centre of the grid
+		//Using a multi-dimensional array, store characters inside this array, the borders should contain = to provide a border. 
+	
+		for(int i = 0; i < ROW; i++) {
+			for(int j = 0; j < COL; j++){
+				if(i == 0 || i == ROW -1)
+					twoDimArr[i][j] = "=";
+				else if(j == 0 || j == COL - 1)
+					twoDimArr[i][j] = "=";
+				else if (j == 2  && i == 2)
+					twoDimArr[i][j] = "x";
+				else 
+					twoDimArr[i][j] = "-";
+			}
+		}
+		for(int i = 0; i < ROW; i++)
+			for(int j = 0; j < COL; j++)
+				System.out.print("[" + twoDimArr[i][j] + "]");
+			System.out.println("");
 	}
-
 }
